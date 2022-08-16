@@ -12,8 +12,8 @@ import (
 func main() {
 	mux := mux.NewRouter()
 
-	mux.HandleFunc("/api", process.ProcessXML).Methods("GET")
+	mux.HandleFunc("/", process.ProcessXML).Methods("GET")
 
-	fmt.Println("Run server: http://localhost:3000")
-	log.Fatal(http.ListenAndServe(":3000", mux))
+	fmt.Println("Run server: http://localhost:3001")
+	log.Fatal(http.ListenAndServe(":3001", mux))
 }

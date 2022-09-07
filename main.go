@@ -6,14 +6,15 @@ import (
 	"net/http"
 	"processXML/process"
 
-	"github.com/gorilla/mux"
 )
 
 func main() {
-	mux := mux.NewRouter()
-
-	mux.HandleFunc("/", process.ProcessXML).Methods("GET")
-
-	fmt.Println("Run server: http://localhost:3001")
-	log.Fatal(http.ListenAndServe(":3001", mux))
+	data := process.ProcessXML()
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, data)
+	})
+	fmt.Printf("Server running (port=8080), route: http://localhost:8080/\n")
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal(err)
+	}
 }

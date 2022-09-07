@@ -1,21 +1,24 @@
 package decompress
 
 import (
+	"bytes"
 	"compress/gzip"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
 )
 
 func DecompressXML() (string, error) {
-	gzipFile, err := os.Open("./assets/elecciones.gz")
 
+	resp, _ := http.Get("https://github.com/Julian-sUsername/storage-fun/blob/main/elecciones.gz?raw=true")
+	contentFile, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	file, err := gzip.NewReader(gzipFile)
+	file, err := gzip.NewReader(bytes.NewReader(contentFile))
 
 	if err != nil {
 		fmt.Println(err)
@@ -36,7 +39,6 @@ func DecompressXML() (string, error) {
 	
 	defer file.Close()
 	defer outFile.Close()
-	defer os.Remove("decompresed")
 
 	return result, nil
 }

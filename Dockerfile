@@ -1,19 +1,22 @@
-FROM golang:1.12-alpine
+FROM golang:1.9 AS builder
 
-RUN apk add --no-cache git
+RUN go version
 
-WORKDIR /app/go-app
+COPY . /go/src/myapp
+WORKDIR /go/src/myapp
 
-COPY go.mod .
-COPY go.sum .
+# #RUN go get -v -t  .
+# RUN set -x && \
+#     #go get github.com/2tvenom/go-test-teamcity && \  
+#     go get github.com/golang/dep/cmd/dep && \
+#     dep ensure -v
 
-RUN go mod download
+# RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  -o /your-app
 
-COPY . .
+FROM scratch
 
-RUN go build -o ./out/go-app .
-
+COPY --from=builder /go/src/myapp .
 
 EXPOSE 8080
 
-CMD ["./out/go-app"]
+CMD ["/go/src/myapp"]

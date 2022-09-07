@@ -3,20 +3,20 @@ package process
 import (
 	"encoding/json"
 	"fmt"
-	"net/http"
+	"log"
 	"processXML/decompress"
-	"processXML/models"
 	"strings"
-
-	xj "github.com/basgys/goxml2json"
 	"github.com/Jeffail/gabs"
+	xj "github.com/basgys/goxml2json"
 	"github.com/thedevsaddam/gojsonq"
 )
 
-func ProcessXML(rw http.ResponseWriter, r *http.Request) {
+func ProcessXML() string {
+
+	var finalDetail string
 
 	if result, err := decompress.DecompressXML() ; err != nil {
-		models.SendNotFound(rw)
+		log.Println("error")
 	} else {
 		xml := strings.NewReader(result)
 		jsonResult, err := xj.Convert(xml)
@@ -41,10 +41,9 @@ func ProcessXML(rw http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 
-		finalDetail := "{\"Detalle_Candidatos\":"+ string(detalleCandidatos)+",\"Detalle_Partidos\":" + jsonParsed.Path("Consolidado.Boletin.Detalle_Circunscripcion.lin.Detalle_Partidos_Totales.lin").String() +"}"
-
-		models.SendData(rw, json.RawMessage(finalDetail))
-
+		finalDetail = "{\"Detalle_Candidatos\":"+ string(detalleCandidatos)+",\"Detalle_Partidos\":" + jsonParsed.Path("Consolidado.Boletin.Detalle_Circunscripcion.lin.Detalle_Partidos_Totales.lin").String() +"}"		
+		
 	}
-
+	
+	return finalDetail
 }

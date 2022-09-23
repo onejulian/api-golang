@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Consolidado>
+    <Boletin>
+        <Numero V="0008"/>
+        <Boletin V="0000"/>
+        <Tipo_Boletin V="NACIONAL"/>
+        <Desc_Corporacion V="PRESIDENTE"/>
+        <Departamento V="00"/>
+        <Desc_Departamento V="NO APLICA"/>
+        <Municipio V="000"/>
+        <Desc_Municipio V="NO APLICA"/>
+        <Dia V="24"/>
+        <Mes V="05"/>
+        <Anio V="2022"/>
+        <Hora V="15"/>
+        <Minuto V="13"/>
+        <Mesas_Instaladas V="103364"/>
+        <Mesas_Informadas V="100763"/>
+        <Porc_Mesas_Informadas V="097,48"/>
+        <Potencial_Sufragantes V="39002239"/>
+        <Total_Sufragantes V="17652313"/>
+        <Porc_Sufragantes V="045,25"/>
+        <Votos_Nulos V="1167484"/>
+        <Porc_Votos_Nulos V="006,61"/>
+        <Votos_No_Marcados V="1157467"/>
+        <Porc_Votos_No_Marcados V="006,55"/>
+        <Detalle_Circunscripcion>
+            <lin>
+                <Circunscripcion V="0"/>
+                <Desc_Circunscripcion V="NACIONAL"/>
+                <Numero_Curules V="0"/>
+                <Detalle_Partidos_Totales>
+                    <lin>
+                        <Partido V="0995"/>
+                        <Descripcion V="VOTOS POR LISTA O PARTIDO"/>
+                        <Votos V="14137470"/>
+                        <Porc V="092,23"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0996"/>
+                        <Descripcion V="VOTOS EN BLANCO"/>
+                        <Votos V="1189892"/>
+                        <Porc V="007,76"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0999"/>
+                        <Descripcion V="VOTOS VÁLIDOS"/>
+                        <Votos V="15327362"/>
+                        <Porc V="086,82"/>
+                    </lin>
+                </Detalle_Partidos_Totales>
+                <Detalle_Partido>
+                    <lin>
+                        <Partido V="1235"/>
+                        <Votos V="4958552"/>
+                        <Porc V="032,35"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="1076"/>
+                        <Votos V="1347239"/>
+                        <Porc V="008,78"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0302"/>
+                        <Votos V="1324901"/>
+                        <Porc V="008,64"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0527"/>
+                        <Votos V="1312775"/>
+                        <Porc V="008,56"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0014"/>
+                        <Votos V="1306112"/>
+                        <Porc V="008,52"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="1234"/>
+                        <Votos V="1304373"/>
+                        <Porc V="008,51"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="1233"/>
+                        <Votos V="1293361"/>
+                        <Porc V="008,43"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                    <lin>
+                        <Partido V="0304"/>
+                        <Votos V="1290157"/>
+                        <Porc V="008,41"/>
+                        <Pref V="SI"/>
+                        <Curules V="0"/>
+                    </lin>
+                </Detalle_Partido>
+                <Detalle_Candidato>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="006"/>
+                        <Votos V="4958552"/>
+                        <Porc V="032,35"/>
+                        <Partido V="1235"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="001"/>
+                        <Votos V="1347239"/>
+                        <Porc V="008,78"/>
+                        <Partido V="1076"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="005"/>
+                        <Votos V="1324901"/>
+                        <Porc V="008,64"/>
+                        <Partido V="0302"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="007"/>
+                        <Votos V="1312775"/>
+                        <Porc V="008,56"/>
+                        <Partido V="0527"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="002"/>
+                        <Votos V="1306112"/>
+                        <Porc V="008,52"/>
+                        <Partido V="0014"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="003"/>
+                        <Votos V="1304373"/>
+                        <Porc V="008,51"/>
+                        <Partido V="1234"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="004"/>
+                        <Votos V="1293361"/>
+                        <Porc V="008,43"/>
+                        <Partido V="1233"/>
+                        <Sec V="0"/>
+                    </lin>
+                    <lin>
+                        <Amb_Presen V="0000000"/>
+                        <Candidato V="008"/>
+                        <Votos V="1290157"/>
+                        <Porc V="008,41"/>
+                        <Partido V="0304"/>
+                        <Sec V="0"/>
+                    </lin>
+                </Detalle_Candidato>
+                <Curules/>
+            </lin>
+        </Detalle_Circunscripcion>
+    </Boletin>
+</Consolidado>

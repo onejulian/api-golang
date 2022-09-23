@@ -5,14 +5,16 @@ import (
 	"compress/gzip"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 )
 
 func DecompressXML() (string, error) {
 
-	resp, _ := http.Get("https://github.com/Julian-sUsername/storage-fun/blob/main/elecciones.gz?raw=true")
+	resp, err := http.Get("https://github.com/Julian-sUsername/storage-fun/blob/main/elecciones.gz?raw=true")
+	if err != nil {
+		fmt.Println(err)
+	}
 	contentFile, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
@@ -33,7 +35,7 @@ func DecompressXML() (string, error) {
 	io.Copy(outFile, file)
 
 	data, _ := os.Open("decompresed")
-	content, _ := ioutil.ReadAll(data)
+	content, _ := io.ReadAll(data)
 
 	result := string(content)
 	

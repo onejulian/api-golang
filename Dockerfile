@@ -1,22 +1,19 @@
-FROM golang:1.9 AS builder
+FROM golang:1.17.5-alpine as builder
 
-RUN go version
+#RUN mkdir -p /go/src/api-aliados/src##
+#WORKDIR /go/src/api-aliados/src
+WORKDIR /app
+COPY . .
 
-COPY . /go/src/myapp
-WORKDIR /go/src/myapp
+RUN go mod download
+#COPY . .
+#RUN go build -o main main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main main.go
+FROM alpine:latest
+WORKDIR /app  
+RUN apk --no-cache add ca-certificates
 
-# #RUN go get -v -t  .
-# RUN set -x && \
-#     #go get github.com/2tvenom/go-test-teamcity && \  
-#     go get github.com/golang/dep/cmd/dep && \
-#     dep ensure -v
+COPY --from=builder /app/main .
 
-# RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  -o /your-app
-
-FROM scratch
-
-COPY --from=builder /go/src/myapp .
-
-EXPOSE 8080
-
-CMD ["/go/src/myapp"]
+EXPOSE 3025
+CMD ["/app/main"]

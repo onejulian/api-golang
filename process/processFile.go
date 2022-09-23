@@ -28,7 +28,7 @@ func ProcessXML() string {
 		jsonData := []byte(data)
 		jsonParsed, err := gabs.ParseJSON(jsonData)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 
 		detail := "{\"Detalle_Partidos\":" + jsonParsed.Path("Consolidado.Boletin.Detalle_Circunscripcion.lin.Detalle_Partidos_Totales.lin").String() +", \"Detalle_Candidatos\":"+ jsonParsed.Path("Consolidado.Boletin.Detalle_Circunscripcion.lin.Detalle_Candidato.lin").String()+"}"
@@ -38,7 +38,7 @@ func ProcessXML() string {
 
 		detalleCandidatos, err := json.Marshal(res)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 
 		finalDetail = "{\"Detalle_Candidatos\":"+ string(detalleCandidatos)+",\"Detalle_Partidos\":" + jsonParsed.Path("Consolidado.Boletin.Detalle_Circunscripcion.lin.Detalle_Partidos_Totales.lin").String() +"}"		

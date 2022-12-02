@@ -1,4 +1,4 @@
-FROM golang:1.17.5-alpine as builder
+FROM golang:1.19-alpine3.17 as builder
 
 #RUN mkdir -p /go/src/api-aliados/src##
 #WORKDIR /go/src/api-aliados/src
